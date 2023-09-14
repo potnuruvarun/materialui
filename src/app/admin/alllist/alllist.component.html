@@ -1,0 +1,34 @@
+<section style="margin: 50px;">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="publicationdetail">
+        <th mat-header-cell *matHeaderCellDef> publicationdetail </th>
+        <td mat-cell *matCellDef="let element"> {{element.publicationdetail}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="publishername">
+        <th mat-header-cell *matHeaderCellDef> publishername </th>
+        <td mat-cell *matCellDef="let element">{{element.publishername}}  </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="dateofpublish">
+        <th mat-header-cell *matHeaderCellDef> dateofpublish </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateofpublish}} </td>
+    </ng-container>
+    <ng-container matColumnDef="publisherType">
+        <th mat-header-cell *matHeaderCellDef> publisherType </th>
+        <td mat-cell *matCellDef="let element"> {{element.publisherType}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</section>

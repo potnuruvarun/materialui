@@ -1,0 +1,29 @@
+<mat-card>
+<section class="sample-app-content" style="margin: 100px;">
+
+<form class="example-form" [formGroup]="Form"  (ngSubmit)="submit(Form.value)" >
+    <div class="example-container">
+        <mat-form-field>
+            <mat-label>Enter your username</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" required >
+            <mat-error *ngIf="Form.controls['email'].touched">Enter Your username
+            </mat-error>
+
+                <!-- <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+    </div>
+    <div class="example-container">
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="password" required >
+            <mat-error *ngIf="Form.controls['password'].touched">Enter Your password
+            </mat-error>
+            <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button> -->
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" style="margin-left: 60px;">Submit</button>
+</form>
+</section>
+</mat-card>
